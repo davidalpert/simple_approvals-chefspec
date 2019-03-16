@@ -1,0 +1,33 @@
+# encoding: utf-8
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'spec/spec_helper.rb'
+    - 'rakefile.rb'
+    # - 'simple_approvals.gemspec'
+    # - 'Gemfile'
+    # - 'example/rakefile.rb'
+    # - 'example/Gemfile'
+    # - 'example/**/*'
+    # - 'spec/**/*'
+Style/Encoding:
+  Enabled: true
+
+SignalException:
+  EnforcedStyle: only_raise
+
+CaseIndentation:
+  EnforcedStyle: end
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Max: 6

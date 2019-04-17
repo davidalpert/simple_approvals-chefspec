@@ -23,6 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'version_bumper'
   spec.add_dependency 'chefspec'
-  spec.add_dependency 'json', '= 2.1.0' # 2.2.0 fails on windows - requires more investigation
   spec.add_dependency 'simple_approvals-rspec'
 end

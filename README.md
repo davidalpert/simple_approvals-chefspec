@@ -76,6 +76,10 @@ a simple chefspec-based implementation of the ApprovalTests pattern
     end
     ```
 
+## Known Issues
+
+1. this library includes a transient dependency on the `json` gem; since version `2.2.0` this gem requires build_essentials to build native extensions so make sure that is installed somewhere in your environment.
+
 ## Development
 
 1. make changes

@@ -1,6 +1,6 @@
 require 'rspec'
 require 'chefspec'
-require 'simple_approvals'
+require 'simple_approvals/rspec'
 
 module RSpec
   module Core

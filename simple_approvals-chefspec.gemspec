@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'version_bumper'
-  spec.add_dependency 'chefspec', '~> 7.0'
+  spec.add_dependency 'chefspec', '~> 9.3'
   spec.add_dependency 'simple_approvals-rspec', '~> 3.1.2'
 end

@@ -13,6 +13,7 @@ module RSpec
         # - not rendering in the cookbook (i.e. file does not exist where expected)
         # - rendering with unexpected content
         shared_examples_for 'an approved chef template' do |file|
+          puts "shared_examples_for: #{file.inspect}" if ENV.has_key?('DEBUG')
           describe file[:expected_path] do
             if file[:template]
               it 'defines the template resource' do
@@ -36,12 +37,14 @@ module RSpec
         #    verify_chef_template(expected_path: '', approved path: '')
         #
         def verify_chef_template(**file)
+          puts "verify_chef_template: #{file.inspect}" if ENV.has_key?('DEBUG')
           file[:template] = true
           file[:scrubber] = ->(rendered_content) { yield rendered_content } if block_given?
           verify_chef_file(**file)
         end
 
         def verify_chef_file(**file)
+          puts "verify_chef_file: #{file.inspect}" if ENV.has_key?('DEBUG')
           file[:scrubber] = ->(rendered_content) { yield rendered_content } if block_given?
           include_examples 'an approved chef template', file
         end
@@ -65,7 +68,9 @@ module RSpec
         # which is taken care of in the shared lib/.chef-rubocop.yml
         #
         def verify_chef_templates(*specs)
+          puts "verify_chef_templates: #{specs.inspect}" if ENV.has_key?('DEBUG')
           specs.each do |file|
+            puts "verify_chef_templates.each: #{file.inspect}" if ENV.has_key?('DEBUG')
             file[:scrubber] = ->(rendered_content) { yield rendered_content } if block_given?
             file[:template] = true
             verify_chef_file(file)
@@ -73,7 +78,9 @@ module RSpec
         end
 
         def verify_chef_files(*specs)
+          puts "verify_chef_files: #{specs.inspect}" if ENV.has_key?('DEBUG')
           specs.each do |file|
+            puts "verify_chef_files.each: #{file.inspect}" if ENV.has_key?('DEBUG')
             file[:scrubber] = ->(rendered_content) { yield rendered_content } if block_given?
             verify_chef_file(file)
           end

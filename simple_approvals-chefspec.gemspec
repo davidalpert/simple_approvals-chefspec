@@ -16,6 +16,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = []
   spec.require_paths = ['lib']
 
+  spec.required_ruby_version = '~> 3.1'
+
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'geminabox'
   spec.add_development_dependency 'rake'
@@ -23,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'version_bumper'
   spec.add_dependency 'chefspec', '~> 7.0'
-  spec.add_dependency 'simple_approvals-rspec'
+  spec.add_dependency 'simple_approvals-rspec', '~> 3.1.2'
 end

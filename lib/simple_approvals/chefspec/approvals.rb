@@ -43,7 +43,7 @@ module RSpec
           verify_chef_file(**file)
         end
 
-        def verify_chef_file(**file)
+        def verify_chef_file(file)
           puts "verify_chef_file: #{file.inspect}" if ENV.has_key?('DEBUG')
           file[:scrubber] = ->(rendered_content) { yield rendered_content } if block_given?
           include_examples 'an approved chef template', file
